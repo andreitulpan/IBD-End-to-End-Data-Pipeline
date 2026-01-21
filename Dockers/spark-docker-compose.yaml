@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  weather-processor:
+    build: .
+    container_name: weather_processor
+    # This mounts your current folder to /app so you can edit code 
+    # and restart without rebuilding the whole image every time.
+    volumes:
+      - .:/app
+    environment:
+      # Forces Python to print logs immediately to the terminal
+      - PYTHONUNBUFFERED=1
