@@ -61,9 +61,7 @@ kafka_df = (
     )
 
     #.option("kafka.ssl.ca.location", CA_FILE)
-    # Tell Java to use a PEM file as the TrustStore
     .option("kafka.ssl.truststore.type", "PEM")
-    # Use the ABSOLUTE path inside the container
     .option("kafka.ssl.truststore.location", f"/app/{CA_FILE}")
     .option("kafka.ssl.endpoint.identification.algorithm", "https")
 
